@@ -2,18 +2,13 @@
 
 #include "Exceptions.hpp"
 
-class Vector { 
+template<typename K>
 
-    public:
-        // Constructor/Destructor //
-        Vector();
-        ~Vector();
+struct Vector {
 
-        // Getters functions //
+    void                print();
+    void                reshape();
+    std::pair<int, int> size();
 
-        // Setters functions //
-
-        // Overloads functions //
-
-    private:
+    Vector() {}
 };

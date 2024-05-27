@@ -1,11 +1,20 @@
 #include "../includes/Matrix.hpp"
 
-//-----------------------------------Constructor/Destructor-----------------------------------//
-Matrix::Matrix() {}
-Matrix::~Matrix() {}
+template<typename K>
+    
+Matrix::Matrix(std::initializer_list<std::initializer_list<K>> initList) {
+    for (const auto& rowInitList : initList) {
+        std::vector<K> row(rowInitList.begin(), rowInitList.end());
+        this->data.push_back(row);
+    }
+};
 
-//-----------------------------------Getters-----------------------------------//
+// template<typename K>
 
-//-----------------------------------Setters-----------------------------------//
+// void    Matrix<K>::print(void) const {
+//     // typename std::vector<std::vector<K> >::iterator it;
 
-//-----------------------------------Overload operators-----------------------------------//
+//     // for (it = this->data.begin(); it != this->data.end(); it++) {
+//     //     std::cout << *(it) << std::endl;
+//     // }
+// }

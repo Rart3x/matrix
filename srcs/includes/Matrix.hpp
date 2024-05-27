@@ -1,21 +1,23 @@
 #pragma once
 
-#include "Exceptions.hpp"
+// #include "Exceptions.hpp"
 
-class Matrix { 
+#include <vector>
+
+template<typename K>
+
+class Matrix {
 
     public:
-        // Constructor/Destructor //
-        Matrix();
-        ~Matrix();
+        Matrix(std::initializer_list<std::initializer_list<K>> initList);
 
-        // Functions //
+        bool                isSquare() const;
 
-        // Getters functions //
-        
-        // Setters functions //
+        void                print() const;
+        void                reshape();
 
-        // Overloads functions //
-
+        std::pair<int, int> size() const;
+    
     private:
+        std::vector<std::vector<K> > data;
 };
