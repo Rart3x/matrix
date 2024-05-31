@@ -1,11 +1,15 @@
 #include "./includes/Matrix.hpp"
-// #include "./includes/Vector.hpp"
+#include "./includes/Vector.hpp"
 
 int main (void) {
 
-	Matrix<int> matrix = { {1, 2, 3}, {4, 5, 6} };
+	double arr[] = { 1, 2, 3, 4, 5 };
 
-	matrix.print();
+	Vector vec(arr);
+
+	Matrix mat(15, 15);
+
+	mat.print();
 
 	return (0);
 }

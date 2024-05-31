@@ -1,20 +1,59 @@
 #include "../includes/Matrix.hpp"
 
-template<typename K>
-    
-Matrix::Matrix(std::initializer_list<std::initializer_list<K>> initList) {
-    for (const auto& rowInitList : initList) {
-        std::vector<K> row(rowInitList.begin(), rowInitList.end());
-        this->data.push_back(row);
+//----------------------Constructor/Destructor----------------------//
+Matrix::Matrix(size_t rows, size_t columns) : rows(rows), columns(columns) {
+    matrix = new double*[rows];
+
+    for (size_t i = 0; i < rows; i++) {
+        matrix[i] = new double[columns];
+        for (size_t j = 0; j < columns; j++)
+            matrix[i][j] = 0;
     }
-};
+}
 
-// template<typename K>
+Matrix::~Matrix() {
+    for (size_t i = 0; i < this->rows; i++) {
+        delete[] this->matrix[i];
+    }
 
-// void    Matrix<K>::print(void) const {
-//     // typename std::vector<std::vector<K> >::iterator it;
+    delete[] this->matrix; 
+}
 
-//     // for (it = this->data.begin(); it != this->data.end(); it++) {
-//     //     std::cout << *(it) << std::endl;
-//     // }
-// }
+//----------------------Utils functions----------------------//
+bool    Matrix::isSquare() const {
+    if (this->rows == this->columns)
+        return true;
+    return false;
+}    
+
+void    Matrix::print() const {
+    for (size_t i = 0; i < this->rows; i++) {
+        std::cout << "(";
+        for (size_t j = 0; j < this->columns; j++) {
+            if (j == this->columns - 1)
+                std::cout << this->matrix[i][j];
+            else
+                std::cout << this->matrix[i][j] << ", ";
+        }
+        std::cout << ")" << std::endl;
+    }
+}
+
+std::pair<size_t, size_t> Matrix::size() {
+    std::pair<size_t, size_t> pair(this->rows, this->columns);
+
+    return pair;
+}
+
+//----------------------Getters----------------------//
+size_t Matrix::getColumns() const {
+    return this->columns;
+}
+
+size_t Matrix::getRows() const {
+    return this->rows;
+}
+//----------------------Setters----------------------//
+
+
+//----------------------Overload operators----------------------//

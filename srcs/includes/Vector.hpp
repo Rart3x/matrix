@@ -2,13 +2,18 @@
 
 #include "Exceptions.hpp"
 
-template<typename K>
+class Vector {
 
-struct Vector {
+    public:
+        Vector(double* vec);
+        ~Vector();
 
-    void                print();
-    void                reshape();
-    std::pair<int, int> size();
+        void                    print();
+        void                    reshape();
+        size_t                  size();
 
-    Vector() {}
+        double                  operator[](const int i) const;
+
+    private:
+        double* vec;
 };

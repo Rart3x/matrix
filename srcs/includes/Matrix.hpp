@@ -1,23 +1,27 @@
 #pragma once
 
-// #include "Exceptions.hpp"
-
-#include <vector>
-
-template<typename K>
+#include "Exceptions.hpp"
+#include "Vector.hpp"
 
 class Matrix {
 
     public:
-        Matrix(std::initializer_list<std::initializer_list<K>> initList);
+        Matrix(size_t rows, size_t columns);
+        ~Matrix();
 
-        bool                isSquare() const;
+        bool                        isSquare() const;
 
-        void                print() const;
-        void                reshape();
+        void                        print() const;
+        void                        reshape();
 
-        std::pair<int, int> size() const;
+        size_t                      getRows() const;
+        size_t                      getColumns() const;
+
+        std::pair<size_t, size_t>   size();
     
     private:
-        std::vector<std::vector<K> > data;
+        size_t      rows;
+        size_t      columns;
+
+        double**    matrix;
 };
