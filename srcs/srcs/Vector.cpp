@@ -19,7 +19,7 @@ Vector::~Vector() {
 //----------------------Maths functions----------------------//
 void    Vector::add(Vector& vec) {
     if (this->getSize() != vec.getSize())
-        throw std::length_error("Error: Vectors have to get same sizes for additions");
+        throw std::length_error("Error: Vectors have to get same sizes");
 
     double *newVec = new double[this->getSize()];
 
@@ -51,7 +51,7 @@ void    Vector::scl(double scl) {
 
 void    Vector::sub(Vector& vec) {
     if (this->getSize() != vec.getSize())
-        throw std::length_error("Error: Vectors have to get same sizes for additions");
+        throw std::length_error("Error: Vectors have to get same sizes");
 
     double *newVec = new double[this->getSize()];
 
@@ -94,7 +94,6 @@ void    Vector::printScl(double scl, Vector& vec) {
     std::cout << "SCALING BY " << scl << std::endl;
 
     this->print();
-    std::cout << scl << std::endl;
     std::cout << std::endl;
     vec.print();
 }

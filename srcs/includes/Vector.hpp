@@ -11,6 +11,7 @@ class Vector {
 
     //----------------------Maths functions----------------------//
         void                    add(Vector& vec);
+        void                    linear_combination(Vector* vec, double* scls);
         void                    scl(double scl);
         void                    sub(Vector& vec);
     //----------------------Print functions----------------------//
