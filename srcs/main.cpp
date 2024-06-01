@@ -9,20 +9,14 @@ int main (void) {
 	Vector vec(arr, 5);
 	Vector vec1(arr1, 5);
 
+	Matrix mat(5, 5);
+	Matrix mat1(5, 5);
+
 	//-------------------Ex00-------------------//
 	try {
 		vec.add(vec1);
 		vec1.sub(vec);
 		vec.scl(5);
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	//-------------------Ex01-------------------//
-	try {
-		Matrix mat(5, 5);
-		Matrix mat1(5, 5);
 
 		mat.insert(0, 0, 5);
 		mat1.insert(0, 0, 5);
@@ -32,7 +26,13 @@ int main (void) {
 		mat.sub(mat1);
 		std::cout << std::endl;
 		mat.scl(5);
-
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	//-------------------Ex01-------------------//
+	try {
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
