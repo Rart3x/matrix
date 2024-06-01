@@ -5,11 +5,16 @@ int main (void) {
 
 	double arr[] = { 1, 2, 3, 4, 5 };
 
-	Vector vec(arr);
+	try {
+		Vector vec(arr, 5);
+		Vector vec1(arr, 5);
 
-	Matrix mat(15, 15);
+		vec.add(vec1);
 
-	mat.print();
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 
 	return (0);
 }
