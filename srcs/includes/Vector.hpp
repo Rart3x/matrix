@@ -11,9 +11,12 @@ class Vector {
 
     //----------------------Maths functions----------------------//
         void                    add(Vector& vec);
+        void                    scl(double scl);
+        void                    sub(Vector& vec);
     //----------------------Print functions----------------------//
         void                    print();
-        void                    printAdd(Vector& vec, Vector& vec1, Vector& vec2);
+        void                    printAddSub(Vector& vec, Vector& vec1, Vector& vec2, std::string mode);
+        void                    printScl(double scl, Vector &vec);
     //----------------------Utils functions----------------------//
         void                    reshape();
         
@@ -21,7 +24,7 @@ class Vector {
         size_t                  getSize() const;
         double*                 getVec() const;
     //----------------------Overload operators----------------------//
-        double                  operator[](const int i) const;
+        double                  operator[](size_t i) const;
 
     private:
         double* vec;
