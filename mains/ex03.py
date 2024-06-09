@@ -1,6 +1,6 @@
-from Vector import Vector
-from Matrix import Matrix
-from Utils import linear_combination
+from ../Vector import Vector
+from ../Matrix import Matrix
+
 
 def main() -> int:
     '''Main method'''
@@ -8,7 +8,7 @@ def main() -> int:
     v = Vector([1, 2, 3, 4, 5])
     v1 = Vector([1, 2, 3, 4, 5])
 
-    linear_combination([v, v1], [10, 20]).print()
+    print(v.dot(v1))
 
 
 if __name__ == '__main__':

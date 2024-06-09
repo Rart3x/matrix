@@ -1,6 +1,6 @@
-from Vector import Vector
-from Matrix import Matrix
-from Utils import angle_cos
+from ../Vector import Vector
+from ../Matrix import Matrix
+from ../Utils import angle_cos
 
 
 def main() -> int:

@@ -1,6 +1,6 @@
-from Vector import Vector
-from Matrix import Matrix
-from Utils import lerp
+from ../Vector import Vector
+from ../Matrix import Matrix
+from ../Utils import lerp
 
 def main() -> int:
     '''Main method'''
