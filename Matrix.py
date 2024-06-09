@@ -58,4 +58,6 @@ class Matrix:
             self.mat[i].print()
 
     def size(self):
+        '''Matrix size method'''
+
         return len(self.mat)

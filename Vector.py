@@ -55,8 +55,37 @@ class Vector:
 
         return self
 
-    def print(self):
+    def norm(self) -> float:
+        '''Vector Euclidean norm method'''
+
+        value = 0.0
+        for i in range(self.size()):
+            value += self.vec[i] ** 2
         
+        return value ** 0.5 #SQRT()
+
+    def norm_1(self) -> float:
+        '''Vector Manhattan norm method'''
+
+        value = 0.0
+        for i in range(self.size()):
+            value += abs(self.vec[i])
+
+        return value
+
+    def norm_inf(self) -> float:
+        '''Vector Supremum norm method'''
+
+        values = []
+
+        for i in range(self.size()):
+            values.append(abs(self.vec[i]))
+
+        return float(max(values))
+
+    def print(self):
+        '''Vector print method'''
+
         print("(", end="")
         for i in range(self.size()):
             if (i == self.size() - 1):
@@ -66,4 +95,6 @@ class Vector:
         print(")")
 
     def size(self):
+        '''Vector size method'''
+
         return len(self.vec)
