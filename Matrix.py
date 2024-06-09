@@ -25,6 +25,8 @@ class Matrix:
         for i in range(self.size()):
             self.mat[i].add(oth.mat[i])
 
+        return self.mat
+
     def scl(self, scl: float | int):
         '''Matrix SCALAR method'''
 
@@ -33,6 +35,8 @@ class Matrix:
         
         for i in range(self.size()):
             self.mat[i].scl(scl)
+        
+        return self.mat
 
     def sub(self, oth):
         '''Matrix SUB method'''
@@ -44,6 +48,8 @@ class Matrix:
         
         for i in range(self.size()):
             self.mat[i].sub(oth.mat[i])
+
+        return self.mat
 
     def print(self):
         '''Matrix print method'''
