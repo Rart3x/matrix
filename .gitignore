@@ -5,3 +5,5 @@ Matrix
 
 .obj/
 .vscode/
+
+__pycache__

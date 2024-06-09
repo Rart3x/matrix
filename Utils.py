@@ -2,6 +2,26 @@ from Matrix import Matrix
 from Vector import Vector
 
 
+def angle_cos(vec1, vec2) -> float:
+    '''Vector Cosinus method'''
+
+    if (not isinstance(vec1, Vector) or not isinstance(vec2, Vector)):
+        return print("Error: arguments need to be Vector")
+    if (vec1.size() != vec2.size()):
+        return print("Error: Vector must have the same size")
+    if all(item == 0 for item in vec1.vec) or all(item == 0 for item in vec2.vec):
+        return print("Error: Cosinus must have Vector with other values than 0")
+
+    sumxx, sumxy, sumyy = 0, 0, 0
+
+    for i in range(vec1.size()):
+        x = vec1.vec[i]; y = vec2.vec[i]
+        sumxx += x*x
+        sumyy += y*y
+        sumxy += x*y
+
+    return sumxy / ((sumxx * sumyy) ** 0.5)
+
 def linear_combination(vec, scls):
     '''Linear combination method'''
 
